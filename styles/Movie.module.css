@@ -1,0 +1,104 @@
+.content {
+    background-color: #e8e8e8;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.description {
+    padding: 1rem 0;
+}
+
+.genre {
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    padding: 0.4rem 1.5rem;
+}
+
+.genres {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.6rem;
+}
+
+.homepage {
+    color: #3b99fc;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.homepage:hover {
+    text-decoration: underline;
+}
+
+.movie {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    cursor: pointer;
+}
+
+.imageContainer {
+    height: 439px;
+}
+
+.imageContainer img {
+    border-radius: 20px 20px 0 0;
+}
+
+.overview {
+    line-height: 1.8;
+    font-size: 1.4rem;
+}
+
+.similarMovies {
+    margin-top: 5rem;
+}
+
+.table {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    height: min-content;
+    margin-left: auto;
+    padding: 2rem;
+    width: 30rem;
+}
+
+.table li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table li div {
+    font-weight: 500;
+}
+
+.table li div:first-of-type {
+    color: #444;
+    font-weight: normal;
+}
+
+.title {
+    background-color: var(--black);
+    border-radius: 20px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 2.8rem;
+    left: 50%;
+    padding: 0.8rem 4rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}

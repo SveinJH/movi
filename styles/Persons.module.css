@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 2rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.persons {
+    grid-column: span 2;
+    padding: 1rem 0;
+}
+
+.title {
+    color: var(--black);
+    font-size: 1.8rem;
+}

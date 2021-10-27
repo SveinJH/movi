@@ -1,0 +1,18 @@
+.person {
+    border-radius: 50%;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    height: 100px;
+    transition: all 0.2s;
+}
+
+.person:hover {
+    transform: scale(1.1);
+}
+
+.person img {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 25%;
+    overflow: visible;
+}

@@ -1,0 +1,6 @@
+.page {
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: calc(100vh - 50px);
+    padding: 3rem 0;
+}
