@@ -11,7 +11,7 @@ import Results from '@/components/results/Results'
 
 export const getStaticPaths = async () => {
     const movies = await axiosFrontend.get('/api/movie/popular')
-    const paths = movies?.data?.results.map(movie => ({
+    const paths = movies?.data?.results?.map(movie => ({
         params: { id: `${movie.id}` },
     }))
 
@@ -66,7 +66,7 @@ const ResultPage = ({ credits, movie, similarMovies }) => {
                 <div className={styles.title}>{title}</div>
                 <div className={styles.description}>
                     <ul className={styles.genres}>
-                        {genres.map(({ id, name }) => (
+                        {genres?.map(({ id, name }) => (
                             <li key={id} className={styles.genre}>
                                 {name}
                             </li>
