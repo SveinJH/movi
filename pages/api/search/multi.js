@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     const { query } = req
 
     const { data } = await axiosBackend.get(
-        `/search/multi?language=no-NO&region=NO&query=${query.q}`,
+        `https://api.themoviedb.org/3/search/multi?language=no-NO&region=NO&query=${query.q}`,
         /* `/search/multi?language=no-NO&region=NO&q=${query.q}`, */
     )
 

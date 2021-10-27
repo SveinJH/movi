@@ -1,5 +1,4 @@
 import { axiosFrontend } from '@/utils/axios'
-import styles from '../styles/Home.module.css'
 import Results from '@/components/results/Results'
 
 export const getStaticProps = async () => {
