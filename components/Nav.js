@@ -9,7 +9,6 @@ const Nav = () => {
     const handleSearch = e => {
         e.preventDefault()
         if (search.trim() !== '') {
-            alert('searching')
             router.push(`/sok?q=${search}`)
         }
     }

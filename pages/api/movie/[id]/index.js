@@ -5,10 +5,10 @@ export default async function handler(req, res) {
 
     const { id } = req.query
     const { data: movie } = await axiosBackend.get(
-        `https://api.themoviedb.org/3/movie/${id}?language=no-NO`,
+        `/movie/${id}?language=no-NO`,
     )
     let { data: credits } = await axiosBackend.get(
-        `https://api.themoviedb.org/3/movie/${id}/credits?language=no-NO`,
+        `/movie/${id}/credits?language=no-NO`,
     )
     credits.cast = credits.cast.splice(0, 9)
 
