@@ -10,7 +10,7 @@ const axiosBackend = axios.create({
 console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
 
 const axiosFrontend = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_VERCEL_URL,
+    baseURL: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`,
 })
 
 export { axiosBackend, axiosFrontend }
