@@ -1,9 +1,9 @@
-import axios from 'axios'
+import { axiosFrontend } from '@/utils/axios'
 import styles from '../styles/Home.module.css'
 import Results from '@/components/results/Results'
 
 export const getStaticProps = async () => {
-    const res = await axios.get('http://localhost:3000/api/movie/popular')
+    const res = await axiosFrontend.get('/api/movie/popular')
 
     return {
         props: {

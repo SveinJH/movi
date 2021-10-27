@@ -8,7 +8,7 @@ const axiosBackend = axios.create({
 })
 
 const axiosFrontend = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: process.env.NEXT_PUBLIC_FRONTEND_URL,
 })
 
 export { axiosBackend, axiosFrontend }
