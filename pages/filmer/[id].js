@@ -1,4 +1,3 @@
-import { axiosFrontend } from '@/utils/axios'
 import Image from 'next/image'
 import styles from '@/styles/Movie.module.css'
 import {
@@ -33,10 +32,6 @@ export const getStaticProps = async ({ params }) => {
 
 const ResultPage = ({ credits, movie, similarMovies }) => {
     if (!movie || !similarMovies) return null
-
-    console.log(similarMovies)
-    console.log(movie)
-    console.log(credits)
 
     const {
         backdrop_path,

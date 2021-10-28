@@ -3,6 +3,7 @@ import styles from '@/styles/Search.module.css'
 import { useEffect, useState } from 'react'
 import Results from '@/components/results/Results'
 import Spinner from '@/components/ui/Spinner'
+import { axiosFrontend } from '@/utils/axios'
 
 const SearchResultsPage = () => {
     const [results, setResults] = useState([])
@@ -17,8 +18,9 @@ const SearchResultsPage = () => {
 
     const getSearchResults = async () => {
         setLoading(true)
-        const data = await getSearchResults(query.q)
-        console.log(data?.results)
+        const { data } = await axiosFrontend.get(
+            `/api/search/multi?q=${query.q}`,
+        )
         setLoading(false)
         setResults(data?.results)
     }
