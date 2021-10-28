@@ -8,22 +8,23 @@ import {
 } from '@/utils/index.js'
 import Persons from '@/components/actors/Persons'
 import Results from '@/components/results/Results'
+import { getPopularMovies } from 'pages/api/movie/popular'
+import { getMovieWithCredits } from 'pages/api/movie/[id]'
+import { getSimilarMovies } from 'pages/api/movie/[id]/similar'
 
 export const getStaticPaths = async () => {
-    const movies = await axiosFrontend.get('/api/movie/popular')
-    const paths = movies?.data?.results?.map(movie => ({
+    const data = await getPopularMovies()
+    const paths = data?.results?.map(movie => ({
         params: { id: `${movie.id}` },
     }))
+    console.log(paths)
 
     return { paths, fallback: true }
 }
 
 export const getStaticProps = async ({ params }) => {
-    const { data } = await axiosFrontend.get(`/api/movie/${params.id}`)
-    const { credits, movie } = data
-    const { data: similarMovies } = await axiosFrontend.get(
-        `/api/movie/${params.id}/similar`,
-    )
+    const { credits, movie } = await getMovieWithCredits(params.id)
+    const similarMovies = await getSimilarMovies(params.id, 10)
 
     return {
         props: { credits, movie, similarMovies },
@@ -66,7 +67,7 @@ const ResultPage = ({ credits, movie, similarMovies }) => {
                 <div className={styles.title}>{title}</div>
                 <div className={styles.description}>
                     <ul className={styles.genres}>
-                        {genres?.map(({ id, name }) => (
+                        {genres.map(({ id, name }) => (
                             <li key={id} className={styles.genre}>
                                 {name}
                             </li>

@@ -1,12 +1,13 @@
 import { axiosFrontend } from '@/utils/axios'
 import Results from '@/components/results/Results'
+import { getPopularMovies } from './api/movie/popular'
 
 export const getStaticProps = async () => {
-    const res = await axiosFrontend.get('/api/movie/popular')
+    const data = await getPopularMovies()
 
     return {
         props: {
-            popularMovies: res?.data?.results,
+            popularMovies: data?.results,
         },
     }
 }
