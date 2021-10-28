@@ -8,7 +8,7 @@ const axiosBackend = axios.create({
 })
 
 const axiosFrontend = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_VERCEL_URL,
+    /* baseURL: process.env.NEXT_PUBLIC_VERCEL_URL, */
 })
 
 export { axiosBackend, axiosFrontend }
